@@ -1,0 +1,10 @@
+{
+  "brand": "AppleSupport",
+  "input": "dataset\\twcs\\twcs.csv",
+  "seed": 42,
+  "selection": "deterministic random sample; train and golden pools are non-overlapping",
+  "pool": "golden",
+  "conversations": 1000,
+  "examples": 1353,
+  "output": "data\\processed\\apple_support_golden.csv"
+}

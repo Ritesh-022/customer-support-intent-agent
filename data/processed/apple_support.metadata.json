@@ -1,0 +1,9 @@
+{
+  "brand": "AppleSupport",
+  "input": "dataset\\twcs\\twcs.csv",
+  "output": "data\\processed\\apple_support.csv",
+  "selected_conversations": 10000,
+  "conversations_with_examples": 9995,
+  "customer_brand_examples": 13209,
+  "selection": "deterministic random sample (seed=42) from all AppleSupport conversation roots; not a model-training split"
+}

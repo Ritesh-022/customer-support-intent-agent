@@ -1,0 +1,147 @@
+{
+  "account_access": {
+    "definition": "Apple ID, iCloud account login/lockout, password reset, sign-in verification. NOT iCloud storage (that is subscription).",
+    "patterns": [
+      "apple\\s*id",
+      "icloud.*account",
+      "account.*icloud",
+      "password",
+      "log\\s*in",
+      "sign\\s*in",
+      "locked out",
+      "verification",
+      "two.factor",
+      "2fa"
+    ]
+  },
+  "billing_payment": {
+    "definition": "Charges, invoices, payment methods, billing errors, or unexpected payments.",
+    "patterns": [
+      "charg(?:e|ed|ing)",
+      "payment",
+      "billing",
+      "bill\\b",
+      "credit card",
+      "debit card",
+      "invoice",
+      "paid twice",
+      "double charge"
+    ]
+  },
+  "device_issue": {
+    "definition": "Physical hardware only: battery drain, cracked/broken screen, device won't turn on, physical damage. NOT software crashes.",
+    "patterns": [
+      "battery",
+      "screen\\b",
+      "broken",
+      "won.?t turn on",
+      "hardware",
+      "physical damage",
+      "cracked",
+      "dead\\b",
+      "not charging"
+    ]
+  },
+  "app_software_issue": {
+    "definition": "iOS/macOS/app bugs, updates, crashes, freezes, slow performance, software errors. Device names alone are NOT evidence of software intent.",
+    "patterns": [
+      "ios\\b",
+      "macos\\b",
+      "update\\b",
+      "app\\b",
+      "itunes",
+      "imessage",
+      "facetime",
+      "crash",
+      "freez",
+      "software",
+      "error\\b",
+      "slow\\b",
+      "lag\\b",
+      "bug\\b",
+      "glitch"
+    ]
+  },
+  "subscription": {
+    "definition": "Apple Music, Apple TV+, iCloud storage subscription, renewal, cancellation of a recurring plan.",
+    "patterns": [
+      "subscription",
+      "subscrib",
+      "renewal",
+      "renew\\b",
+      "cancel.*plan",
+      "apple music",
+      "apple tv\\b",
+      "icloud storage",
+      "icloud.*plan",
+      "storage plan"
+    ]
+  },
+  "refund_return": {
+    "definition": "Refund, return, reimbursement, cancellation of a purchase, or money back request.",
+    "patterns": [
+      "refund",
+      "return\\b",
+      "money back",
+      "reimburse",
+      "cancel.*order",
+      "charged.*wrong"
+    ]
+  },
+  "order_purchase": {
+    "definition": "Buying, ordering, delivery, shipping, product availability, or purchase status.",
+    "patterns": [
+      "order\\b",
+      "purchase",
+      "buy\\b",
+      "bought",
+      "shipping",
+      "delivery",
+      "deliver\\b",
+      "tracking",
+      "available\\b"
+    ]
+  },
+  "connectivity_issue": {
+    "definition": "Wi-Fi, Bluetooth, cellular, mobile data, network, or connection problem.",
+    "patterns": [
+      "wi[ -]?fi",
+      "bluetooth",
+      "internet\\b",
+      "network\\b",
+      "cellular",
+      "mobile data",
+      "signal\\b",
+      "connect\\b",
+      "connection"
+    ]
+  },
+  "general_information": {
+    "definition": "General question, how-to request, product information, or policy information.",
+    "patterns": [
+      "how do i\\b",
+      "how can i\\b",
+      "where can i\\b",
+      "what is\\b",
+      "can i\\b",
+      "information\\b",
+      "question\\b"
+    ]
+  },
+  "complaint": {
+    "definition": "Explicit complaint or strongly negative feedback without a clearer actionable issue.",
+    "patterns": [
+      "complaint\\b",
+      "terrible\\b",
+      "worst\\b",
+      "disappoint",
+      "unacceptable\\b",
+      "poor service",
+      "awful\\b"
+    ]
+  },
+  "insufficient_information": {
+    "definition": "Message that does not match another frozen intent with enough evidence (e.g. bare mentions, URLs only, very short messages).",
+    "patterns": []
+  }
+}

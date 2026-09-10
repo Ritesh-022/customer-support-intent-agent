@@ -1,0 +1,51 @@
+groundedness,helpfulness,safety,overall,reason,id
+3,4,5,4,"The response is somewhat grounded but could be more specific to the customer's issue with apps closing, especially Music.",1
+4,4,5,4,The response is relevant and provides a clear path for further assistance.,2
+4,4,5,4,"The response is relevant and provides useful steps, but could be more grounded by referencing the historical evidence more directly.",3
+4,3,5,3,"The response is somewhat grounded and safe, but lacks direct resolution and helpfulness for the specific issue.",4
+4,4,5,4,"The response is relevant and provides a clear path for the customer to provide more information, but it could be more specific to the customer's initial message.",5
+4,4,5,4,"The response is relevant and provides a clear next step, but it could be more empathetic given the customer's frustration.",6
+5,5,5,5,"The response accurately addresses the customer's concern about safety, provides relevant information, and directs the customer to further assistance.",7
+4,4,5,4,The response is relevant and provides a constructive path for further assistance.,8
+4,4,5,4,"The response is relevant and provides a clear path for the customer to provide necessary information, but it could be more specific about the expected resolution.",9
+4,4,5,4,"The response is relevant and provides a useful workaround, but could be more empathetic and direct in addressing the customer's frustration.",10
+4,4,5,4,"The response is relevant and provides a clear path for the customer to provide necessary information, though it could be more specific to the issue.",11
+4,4,5,4,"The response is relevant and provides a useful link, but it could be more specific to the customer's message.",12
+4,3,5,3,"The response is somewhat grounded and safe, but could be more helpful by directly addressing the issue and providing more specific troubleshooting steps.",13
+3,4,5,4,"The response is relevant and provides a step to resolve the issue, but the initial message was misleading.",14
+4,4,5,4,"The response is relevant and provides a clear next step, but could be more specific to the customer's issue.",15
+4,5,5,4,"The response is relevant and provides a clear path for further assistance, but could be more grounded in the historical context.",16
+4,4,5,4,"The response is relevant and provides a useful workaround, but it could be more direct in addressing the customer's urgency.",17
+4,3,5,3,The response acknowledges the issue but could be more specific and empathetic.,18
+4,4,5,4,"The response is relevant and provides a link to previous advice, but it could be more proactive in addressing the severity of the issue.",19
+4,3,5,3,The response is somewhat helpful but lacks specificity to the customer's issue.,20
+3,3,4,3,The response acknowledges the customer's frustration but could be more direct in suggesting a solution like restoring from a backup.,21
+4,3,5,3,"The response is somewhat grounded and safe, but could be more helpful by providing a direct solution or next steps.",22
+4,4,5,4,"The response is relevant and provides useful suggestions, but could be more personalized to the specific issue mentioned.",23
+4,4,5,4,"The response is relevant and provides a clear path for further assistance, but it could be more empathetic and directly address the customer's frustration.",24
+4,4,5,4,The response acknowledges the issue and directs the customer to a secure channel for further assistance.,25
+4,5,5,4,The response is relevant and provides a clear path for further assistance.,26
+4,4,5,4,"The response is relevant and provides a clear path for the customer to resolve the issue, but it could be more specific to the customer's devices.",27
+4,3,5,3,"The response is somewhat grounded and safe, but could be more helpful by providing a direct solution or next steps.",28
+4,4,5,4,"The response is relevant and provides useful troubleshooting steps, but it does not directly address the possibility of downgrading to iOS 10.",29
+4,4,5,4,"The response is relevant and provides useful steps, but could be more grounded by directly addressing the frequent crashes issue.",30
+4,4,5,4,"The response is relevant and provides a safe and helpful course of action, but could be more grounded by directly addressing the specific issue with the mouse.",31
+4,4,5,4,"The response is relevant and provides a clear path for the customer to provide more information, but it could be more empathetic.",32
+4,5,5,4,"The response is relevant, helpful, and safe, but could be more grounded by addressing the specific issue more directly.",33
+4,3,5,3,The response addresses the battery concern but could be more directly relevant to the emoji issue.,34
+4,4,5,4,"The response is relevant and provides a clear path for the user to provide necessary information, but it could be more specific to iOS 11.",35
+4,4,5,4,"The response is relevant and provides a clear next step for the customer, but it could be more specific to the issue described.",36
+5,5,5,5,"The response is accurate, helpful, and aligns well with historical evidence.",37
+4,4,5,4,"The response is relevant and provides useful steps, but it could be more grounded by addressing the specific issue of the device shutting down unexpectedly.",38
+4,3,5,3,The response acknowledges the customer's frustration but could be more direct in addressing the issue.,39
+4,4,5,4,"The response is helpful and grounded in the context, but could be more empathetic.",40
+4,4,5,4,"The response is relevant and provides a clear call to action for the customer to provide more details, but it could be more specific to the issues mentioned.",41
+4,4,5,4,The response is relevant and provides a clear next step for the customer.,42
+4,4,5,4,"The response is relevant, provides useful advice, and ensures safety.",43
+2,1,3,2,The response is not grounded in addressing the software issue and is overly generic.,44
+4,4,5,4,The response is relevant and provides a clear path for the customer to get the information they need.,45
+2,3,4,3,"The response is not grounded as it repeats the customer's message without providing any useful information or direction. It is somewhat helpful by suggesting a next step, but not safety-critical.",46
+4,4,5,4,"The response is relevant and provides a practical solution, but it could be more empathetic and acknowledge the customer's frustration.",47
+4,4,5,4,"The response acknowledges the issue and suggests a private conversation for further investigation, which is appropriate.",48
+4,5,5,4,"The response is relevant, helpful, and safe, but could be more grounded in addressing the customer's frustration.",49
+4,4,5,4,"The response is relevant and provides a clear path for further assistance, but could be more directly helpful with immediate tips.",50

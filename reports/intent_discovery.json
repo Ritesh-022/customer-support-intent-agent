@@ -1,0 +1,462 @@
+{
+  "status": "proposed_taxonomy_review",
+  "warning": "Counts and terms are exploratory weak-supervision evidence, not human-validated intent labels.",
+  "rows": 12011,
+  "proposed_taxonomy": {
+    "account_access": {
+      "definition": "Apple ID, iCloud account login/lockout, password reset, sign-in verification. NOT iCloud storage (that is subscription).",
+      "patterns": [
+        "apple\\s*id",
+        "icloud.*account",
+        "account.*icloud",
+        "password",
+        "log\\s*in",
+        "sign\\s*in",
+        "locked out",
+        "verification",
+        "two.factor",
+        "2fa"
+      ]
+    },
+    "billing_payment": {
+      "definition": "Charges, invoices, payment methods, billing errors, or unexpected payments.",
+      "patterns": [
+        "charg(?:e|ed|ing)",
+        "payment",
+        "billing",
+        "bill\\b",
+        "credit card",
+        "debit card",
+        "invoice",
+        "paid twice",
+        "double charge"
+      ]
+    },
+    "device_issue": {
+      "definition": "Physical hardware only: battery drain, cracked/broken screen, device won't turn on, physical damage. NOT software crashes.",
+      "patterns": [
+        "battery",
+        "screen\\b",
+        "broken",
+        "won.?t turn on",
+        "hardware",
+        "physical damage",
+        "cracked",
+        "dead\\b",
+        "not charging"
+      ]
+    },
+    "app_software_issue": {
+      "definition": "iOS/macOS/app bugs, updates, crashes, freezes, slow performance, software errors. Device names alone are NOT evidence of software intent.",
+      "patterns": [
+        "ios\\b",
+        "macos\\b",
+        "update\\b",
+        "app\\b",
+        "itunes",
+        "imessage",
+        "facetime",
+        "crash",
+        "freez",
+        "software",
+        "error\\b",
+        "slow\\b",
+        "lag\\b",
+        "bug\\b",
+        "glitch"
+      ]
+    },
+    "subscription": {
+      "definition": "Apple Music, Apple TV+, iCloud storage subscription, renewal, cancellation of a recurring plan.",
+      "patterns": [
+        "subscription",
+        "subscrib",
+        "renewal",
+        "renew\\b",
+        "cancel.*plan",
+        "apple music",
+        "apple tv\\b",
+        "icloud storage",
+        "icloud.*plan",
+        "storage plan"
+      ]
+    },
+    "refund_return": {
+      "definition": "Refund, return, reimbursement, cancellation of a purchase, or money back request.",
+      "patterns": [
+        "refund",
+        "return\\b",
+        "money back",
+        "reimburse",
+        "cancel.*order",
+        "charged.*wrong"
+      ]
+    },
+    "order_purchase": {
+      "definition": "Buying, ordering, delivery, shipping, product availability, or purchase status.",
+      "patterns": [
+        "order\\b",
+        "purchase",
+        "buy\\b",
+        "bought",
+        "shipping",
+        "delivery",
+        "deliver\\b",
+        "tracking",
+        "available\\b"
+      ]
+    },
+    "connectivity_issue": {
+      "definition": "Wi-Fi, Bluetooth, cellular, mobile data, network, or connection problem.",
+      "patterns": [
+        "wi[ -]?fi",
+        "bluetooth",
+        "internet\\b",
+        "network\\b",
+        "cellular",
+        "mobile data",
+        "signal\\b",
+        "connect\\b",
+        "connection"
+      ]
+    },
+    "general_information": {
+      "definition": "General question, how-to request, product information, or policy information.",
+      "patterns": [
+        "how do i\\b",
+        "how can i\\b",
+        "where can i\\b",
+        "what is\\b",
+        "can i\\b",
+        "information\\b",
+        "question\\b"
+      ]
+    },
+    "complaint": {
+      "definition": "Explicit complaint or strongly negative feedback without a clearer actionable issue.",
+      "patterns": [
+        "complaint\\b",
+        "terrible\\b",
+        "worst\\b",
+        "disappoint",
+        "unacceptable\\b",
+        "poor service",
+        "awful\\b"
+      ]
+    },
+    "insufficient_information": {
+      "definition": "Message that does not match another frozen intent with enough evidence (e.g. bare mentions, URLs only, very short messages).",
+      "patterns": []
+    }
+  },
+  "intents": {
+    "account_access": {
+      "weak_label_count": 223,
+      "top_terms": [
+        "password",
+        "apple id",
+        "id",
+        "my",
+        "to",
+        "apple",
+        "applesupport",
+        "and",
+        "the",
+        "in",
+        "my apple",
+        "icloud",
+        "account",
+        "it",
+        "for"
+      ],
+      "sample_messages": [
+        "@AppleSupport Hello, I need some help regarding the region change on my Apple ID",
+        "So over @115858 &amp; their awful customer service. Locked out of iCloud for 2 weeks &amp; promised password recovery instructions that never came\ud83d\udd95\ud83c\udffd",
+        "@AppleSupport Why can't I log into my icloud on my Iphone 7 plus?  My phone updated, logged me out of everything and won't take new pw.",
+        "@applesupport The latest version of iTunes for Windows keeps asking for my password and sometimes gets stuck in a loop.",
+        "@AppleSupport Other site works on Safari, and at the same time icloud login also works perfectly fine in Chrome"
+      ],
+      "definition": "Apple ID, iCloud account login/lockout, password reset, sign-in verification. NOT iCloud storage (that is subscription)."
+    },
+    "billing_payment": {
+      "weak_label_count": 413,
+      "top_terms": [
+        "charge",
+        "my",
+        "to",
+        "charger",
+        "charging",
+        "it",
+        "and",
+        "115858",
+        "phone",
+        "the",
+        "applesupport",
+        "charged",
+        "for",
+        "my phone",
+        "battery"
+      ],
+      "sample_messages": [
+        "@123379 @115858 Yes, after the update I have to charge it several times a day. Irritating!",
+        "@123379 @115858 Yes, My phone does not stay charged like before",
+        "@AppleSupport At the apple store in Paris, can I buy an iPad by paying half in cash and half in credit card?",
+        "@AppleSupport i recently switched from 3 mobile to EE and redeemed the 6 months free Apple Music but I got charged \u00a39.99 today.",
+        "Ever since I updated my phone it hasn\u2019t been able to hold a charge very well \ud83d\ude21 @115858 @AppleSupport"
+      ],
+      "definition": "Charges, invoices, payment methods, billing errors, or unexpected payments."
+    },
+    "refund_return": {
+      "weak_label_count": 45,
+      "top_terms": [
+        "return",
+        "refund",
+        "to",
+        "return to",
+        "the",
+        "want",
+        "applesupport",
+        "my",
+        "can",
+        "cancel",
+        "my money",
+        "money",
+        "purchase",
+        "me",
+        "iphone"
+      ],
+      "sample_messages": [
+        "@AppleSupport  Hi, I made a transaction twice by mistake, please refund. All details at the photo https://t.co/K3GxrVC3LM",
+        "@115858 Be careful after sales service is very bad my battery of i7 exploded within 3 hrs of return from service centre only 18 month old life risk",
+        "@AppleSupport request a refund for a music purchase",
+        "@AppleSupport I need help with something. I got a refund from two songs that I returned to iTunes but have yet been refunded my money. What's taking so long?",
+        "What\u2019shappening to iphone? My iPhone 7+ been slightly crashing.. It turned black then return to lock screen. What to do? Please help.. @AppleSupport"
+      ],
+      "definition": "Refund, return, reimbursement, cancellation of a purchase, or money back request."
+    },
+    "subscription": {
+      "weak_label_count": 152,
+      "top_terms": [
+        "apple music",
+        "music",
+        "apple",
+        "my apple",
+        "my",
+        "applesupport",
+        "to",
+        "tv",
+        "apple tv",
+        "subscription",
+        "and",
+        "it",
+        "on",
+        "the",
+        "have"
+      ],
+      "sample_messages": [
+        "@AppleSupport I am using iOS 11.1.2 and I use both Apple Music and Spotify",
+        "@AppleSupport my apple music won\u2019t let me download or add new music to my library what\u2019s up with that",
+        "@AppleSupport connects to other devices incl apple tv non 4k. version 11.1.2 (15B202) model MG472AA/A",
+        "@AppleSupport I\u2019ve checked iCloud storage on web Mac and iPhone. They all say I have 10gig free left to use but photos on Mac says if ran out and won\u2019t sync new photos across from my phone. Not tried much. Apart from deleting what was in the deleted folder. Made no difference to space.",
+        "@AppleSupport I\u2019m using Apple Music and I have the most current version of iOS."
+      ],
+      "definition": "Apple Music, Apple TV+, iCloud storage subscription, renewal, cancellation of a recurring plan."
+    },
+    "connectivity_issue": {
+      "weak_label_count": 471,
+      "top_terms": [
+        "wifi",
+        "bluetooth",
+        "to",
+        "on",
+        "and",
+        "it",
+        "my",
+        "applesupport",
+        "the",
+        "connect",
+        "is",
+        "115858",
+        "off",
+        "wifi and",
+        "connect to"
+      ],
+      "sample_messages": [
+        "@115858 since we have update our phone we are facing many problem ringer is not working,network issue, phone hang problem. Poor update",
+        "Oye @115858, muy bonitos tus nuevos emojis pero, \u00bfpara cuando el poder desactivar (REAL) el Wifi y el Bluetooth desde el CC?",
+        "@115858 is there A solution for the network bug in combination iPhone8 and T-Mobile in the Netherlands, can not call with my new iPhone8..",
+        "@115858 updated to 11.1 on iPhone 7 and now it won\u2019t connect to the App Store. Known issue?",
+        "@AppleSupport most recent iPhone update switches WiFi &amp; Bluetooth on automatically. V.annoying! Is there a way to stop this? #ItAteMyBattery"
+      ],
+      "definition": "Wi-Fi, Bluetooth, cellular, mobile data, network, or connection problem."
+    },
+    "order_purchase": {
+      "weak_label_count": 321,
+      "top_terms": [
+        "buy",
+        "to",
+        "order",
+        "bought",
+        "it",
+        "applesupport",
+        "the",
+        "my",
+        "purchased",
+        "available",
+        "in",
+        "and",
+        "iphone",
+        "is",
+        "purchase"
+      ],
+      "sample_messages": [
+        "@AppleSupport is my #IphoneX really going to ship between December 5-11? I preorder right when preordering open at 12:01",
+        "@AppleSupport you guys are terrible back in October you said you\u2019d send me something so I could send in my AirPods for repair since they didn\u2019t work when I bought them. You never sent them to me at fort sill. Thanks!",
+        "@AppleSupport Hi, do you have french support ?\nI want to change my delivery address on an order placed\nThanls",
+        "@AppleSupport Is it available for download? I cant find it in the app store",
+        "@AppleSupport Its not available in philippines \u2639\ufe0f"
+      ],
+      "definition": "Buying, ordering, delivery, shipping, product availability, or purchase status."
+    },
+    "app_software_issue": {
+      "weak_label_count": 4096,
+      "top_terms": [
+        "ios",
+        "update",
+        "the",
+        "my",
+        "11",
+        "applesupport",
+        "ios 11",
+        "to",
+        "115858",
+        "is",
+        "and",
+        "it",
+        "phone",
+        "this",
+        "iphone"
+      ],
+      "sample_messages": [
+        "@AppleSupport The newest update. I\ufe0f made sure to download it yesterday.",
+        "I keep getting this error message saying \u201cthe item can\u2019t be played\u201d and idk how to fix it... @115948 @AppleSupport",
+        "Please fix the battery issues in Ios 11! @AppleSupport @115858",
+        "Oh my god i\u2019m so embarrassing @115858 why do I always send voice recordings in iMessage by accident do you know how embarrassing that is?!",
+        "@AppleSupport 6 plus, idk what iOS version.. and it was the rear facing camera"
+      ],
+      "definition": "iOS/macOS/app bugs, updates, crashes, freezes, slow performance, software errors. Device names alone are NOT evidence of software intent."
+    },
+    "device_issue": {
+      "weak_label_count": 561,
+      "top_terms": [
+        "battery",
+        "screen",
+        "the",
+        "my",
+        "applesupport",
+        "it",
+        "is",
+        "on",
+        "iphone",
+        "to",
+        "and",
+        "115858",
+        "my battery",
+        "battery life",
+        "life"
+      ],
+      "sample_messages": [
+        "@AppleSupport @116860 I have and my battery life has become even worse",
+        "@115858 shards of glass literally stabbed me when my screen broke. Fuck you apple I phone.",
+        "@AppleSupport My iPhone screen glass is completely cracked. Still the touch screen works. Can I change the glass alone or the display too?",
+        "@123379 @115858 Yes I couldn't believe that my battery kept dying! I thought my charger was dead",
+        "@AppleSupport @123388 I hate it !! The entire format changed! When I receive a call I have to say hello 2x no one hears me the first time battery dies quick \ud83d\ude21"
+      ],
+      "definition": "Physical hardware only: battery drain, cracked/broken screen, device won't turn on, physical damage. NOT software crashes."
+    },
+    "complaint": {
+      "weak_label_count": 80,
+      "top_terms": [
+        "worst",
+        "disappointed",
+        "terrible",
+        "to",
+        "the",
+        "it",
+        "service",
+        "awful",
+        "115858",
+        "is",
+        "the worst",
+        "customer",
+        "my",
+        "apple",
+        "ever"
+      ],
+      "sample_messages": [
+        "@123379 @115858 Same here and I tried upgrading to 11.1 last night and still no better. It\u2019s TERRIBLE. @115858, please fix it NOW.",
+        "Still no resoultion to my complaint. Poor service. Acknowledgement of your email/submission - Follow-up: 677035208 @116333 @AppleSupport",
+        "@116333 the @115858 customer service is about the worst I have ever experienced, 2 weeks had my money, no device, useless!! @AppleSupport",
+        "@AppleSupport This and it\u2019s awful. Help \ud83d\ude29\ud83d\ude29 https://t.co/fDYzsmY4r3",
+        "@AppleSupport has the worst customer service ever! Had an online chat with a staff and she is just so rude. No sympathy whatsoever."
+      ],
+      "definition": "Explicit complaint or strongly negative feedback without a clearer actionable issue."
+    },
+    "general_information": {
+      "weak_label_count": 502,
+      "top_terms": [
+        "question",
+        "question mark",
+        "mark",
+        "how",
+        "what is",
+        "what",
+        "applesupport",
+        "is",
+        "can",
+        "this",
+        "my",
+        "the",
+        "do",
+        "how do",
+        "how can"
+      ],
+      "sample_messages": [
+        "@AppleSupport Hi! What is going on? Has Youtube lost it? What can be done about it? Thanks for the support! https://t.co/T8ZZp4IH6t",
+        "@115858 what is wrong with my keyboard like? Lol I\ufe0f",
+        "@AppleSupport How can i solve this problem? https://t.co/GGrwhAf4yr",
+        "@AppleSupport How can I go back to the previous ios version? This one sucks for real... still keeps being stuck \ud83d\ude2b\ud83e\udd22",
+        "Another pointless call with @115858 &amp; @AppleSupport disgusting customer service with no care for their customers!!! Who can I complain to?!\ud83d\ude21"
+      ],
+      "definition": "General question, how-to request, product information, or policy information."
+    },
+    "insufficient_information": {
+      "weak_label_count": 5147,
+      "top_terms": [
+        "applesupport",
+        "115858",
+        "it",
+        "the",
+        "this",
+        "my",
+        "https co",
+        "https",
+        "co",
+        "to",
+        "fix",
+        "is",
+        "and",
+        "you",
+        "on"
+      ],
+      "sample_messages": [
+        "@AppleSupport  https://t.co/NV0yucs0lB",
+        "@AppleSupport Thanks, thing is I still have like 81 cents in credit and won't let me do that until I have zero credit",
+        "Is anyone else having problems with there iPhone 7 saying no service? @115858 @115714",
+        "@AppleSupport Yes",
+        "This \u201cI\ufe0f\u201d shit annoying yo @115858 fix this shit"
+      ],
+      "definition": "Message that does not match another frozen intent with enough evidence (e.g. bare mentions, URLs only, very short messages)."
+    }
+  }
+}

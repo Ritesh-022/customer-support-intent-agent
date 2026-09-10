@@ -1,0 +1,6 @@
+brand,sampled_conversations,sampled_customer_messages,sampled_brand_responses,median_turns,p75_turns,multi_brand_rate,exact_customer_repeat_rate,near_response_repeat_rate,avg_customer_chars,low_information_rate,ambiguous_short_message_rate,escalation_signal_rate,response_action_proxy_rate,candidate_note
+AmazonHelp,2000,5100,4302,3.0,5.0,0.0055,0.0263,0.0016,115.88,0.0312,0.1178,0.0247,0.4721,Inspect sampled conversations; heuristic rates are not labels or proof of resolution.
+AppleSupport,2000,3278,2635,2.0,4.0,0.001,0.0134,0.0049,106.68,0.0153,0.0839,0.004,0.8414,Inspect sampled conversations; heuristic rates are not labels or proof of resolution.
+Uber_Support,2000,3312,2641,2.0,3.0,0.002,0.0211,0.0068,115.24,0.0211,0.0776,0.0299,0.8766,Inspect sampled conversations; heuristic rates are not labels or proof of resolution.
+SpotifyCares,2000,3262,2978,2.0,4.0,0.0025,0.0175,0.0024,103.75,0.0313,0.1042,0.0012,0.544,Inspect sampled conversations; heuristic rates are not labels or proof of resolution.
+AmericanAir,2000,3724,2800,2.0,4.0,0.0185,0.0067,0.0,120.25,0.0153,0.0636,0.0153,0.4425,Inspect sampled conversations; heuristic rates are not labels or proof of resolution.

@@ -1,0 +1,278 @@
+# AppleSupport AI — Take-Home Project
+
+## Setup
+
+```
+pip install -r requirements.txt
+```
+
+Install and start Ollama (required for reply generation and LLM judge):
+
+```
+# Install from https://ollama.com, then:
+ollama pull qwen2.5:7b
+ollama serve
+```
+
+Ollama is used for:
+- generating grounded draft replies
+- optional LLM-based evaluation (Step 7)
+- assisting golden-set annotation (`annotate_golden.py`)
+
+The intent classifier itself does **not** depend on Ollama.
+
+Place the raw TWCS dataset at `dataset/twcs/twcs.csv`.
+The raw dataset (~516 MB) is not committed to this repository.
+Download it from [Kaggle — Customer Support on Twitter](https://www.kaggle.com/datasets/thoughtvector/customer-support-on-twitter).
+
+---
+
+## Run order
+
+### Step 1 — Audit the raw dataset
+
+```
+python data_analysis.py
+```
+
+Outputs: `reports/twcs/`
+
+---
+
+### Step 2 — Select target brand
+
+```
+python brand_selection.py
+```
+
+Outputs: `reports/brand_selection/`
+
+Selected brand: **AppleSupport** (see Decision Log in `reports/brand_selection/brand_selection.md`).
+
+---
+
+### Step 3 — Extract AppleSupport conversations
+
+```
+python extract_apple_support.py
+```
+
+Outputs:
+- `data/processed/apple_support_train.csv` — training pool (12,011 examples)
+- `data/processed/apple_support_golden.csv` — held-out golden pool (1,353 examples)
+
+The two pools are **conversation-disjoint and tweet-disjoint**: no tweet ID and no
+conversation ID appears in both files. The golden set is never used to create training
+labels.
+
+---
+
+### Step 4 — Assign weak intent labels
+
+```
+python label_data.py
+```
+
+Outputs:
+- `data/labeled_training.csv` — weak labels for the training pool only
+- `data/labeled_high_confidence.csv` — rows with `rule_confidence >= 0.90`
+- `data/label_review.csv` — rows flagged for manual review
+- `data/taxonomy.json`
+- `reports/intent_discovery.json`
+
+**Warning:** `rule_confidence` is a keyword rule-score ratio, NOT a calibrated probability.
+These are weak labels. Do not treat them as ground truth.
+
+To train on high-confidence labels only (recommended experiment):
+
+```
+python label_data.py --high-confidence-threshold 0.90
+```
+
+---
+
+### Step 5 — Generate golden-set template
+
+```
+python generate_golden.py
+```
+
+Outputs: `data/golden_set.csv` (208 rows, stratified, pre-filled with `customer_message`)
+
+**You must manually review and finalize** `intent`, `should_escalate`,
+`expected_resolution`, `difficulty`, and preferably `evidence_conversation_id` for each row.
+`annotate_golden.py` may provide Ollama suggestions, but suggestions are not final
+ground truth until a human reviews every row. Failed suggestions remain blank.
+
+Never use golden-set rows for training.
+
+---
+
+### Step 6 — Train models
+
+Train on all weak labels:
+
+```
+python model.py --labels data/labeled_training.csv
+```
+
+Or train on high-confidence subset only (compare both):
+
+```
+python model.py --labels data/labeled_high_confidence.csv --high-confidence-only
+```
+
+Outputs: `models/majority.joblib`, `models/tfidf_logistic.joblib`, `models/embedding_logistic.joblib`
+
+---
+
+### Step 7 — Evaluate
+
+After annotating the golden set:
+
+```
+python evaluation.py --labels data/labeled_training.csv --golden data/golden_set.csv
+```
+
+With Ollama LLM judge (requires `ollama serve` with `qwen2.5:7b`):
+
+```
+python evaluation.py --labels data/labeled_training.csv --golden data/golden_set.csv --run-llm-judge
+```
+
+This scores each generated reply on four dimensions (groundedness, helpfulness, safety, overall, 1–5)
+and writes per-row scores to `reports/llm_judge_scores.csv`.
+
+After scoring ~50 responses yourself, add them to `reports/llm_judge_human_scores.csv` in the same
+format, then run human-vs-Ollama agreement:
+
+```
+python evaluation.py --labels data/labeled_training.csv --golden data/golden_set.csv \
+  --judge-scores reports/llm_judge_scores.csv \
+  --human-scores reports/llm_judge_human_scores.csv
+```
+
+Outputs: `reports/evaluation.json`
+
+---
+
+## Evaluation methodology
+
+| Benchmark | What it measures | Status |
+|---|---|---|
+| Weak-label test F1 | How well the model reproduces keyword rules | Secondary — not ground truth |
+| Golden-set Macro-F1 | Intent classification performance on independently human-reviewed examples | **Primary headline number** |
+| Retrieval Recall@K | Whether historical evidence is retrieved correctly | Requires annotated `evidence_conversation_id` |
+| Escalation recall / false-auto rate | Safety of the escalation policy | Requires annotated `should_escalate` |
+| LLM judge scores | Reply correctness, grounding, helpfulness, safety | Requires local Ollama (`ollama serve`) |
+| Human-LLM agreement | Validates judge reliability | Requires human scoring of ~50 responses |
+
+On a conversation-grouped weak-label holdout, TF-IDF + Logistic Regression achieved
+**84.18% accuracy and 75.38% macro-F1**. On a stricter temporal 80/20 split it achieved
+**81.89% accuracy and 72.41% macro-F1**. These benchmarks use weak labels generated by
+keyword rules and therefore measure rule reproduction rather than real-world intent accuracy.
+
+## What is misleading about my headline number?
+
+The golden-set score is not a production success rate. The golden set contains only
+208 examples and was intentionally stratified to include difficult cases, so its class
+distribution does not represent live traffic. In addition, the training labels are weak
+labels generated by rules rather than human ground truth. Therefore, weak-label
+performance mainly measures how well the model reproduces those rules. The golden-set
+result is more meaningful, but still should not be interpreted as an estimate of
+real-world customer resolution rate.
+
+Accuracy is also a misleading headline here because the class distribution is highly
+skewed (`app_software_issue` is the majority class). Macro-F1 is the primary metric
+because it weights every intent equally regardless of frequency.
+
+## Top 5 failure modes
+
+1. **`app_software_issue` vs `device_issue` bleed** — Messages that mention a device
+   name alongside a software term (e.g. "iPhone won't update") are correctly routed to
+   `app_software_issue`, but ambiguous phrasing like "my iPhone is broken" can land in
+   either class. Hypothesis: the TF-IDF representation lacks the context to resolve
+   hardware-vs-software ambiguity without sentence-level semantics.
+
+2. **`complaint` misclassified as the issue type** — Strongly negative messages often
+   contain enough technical vocabulary (e.g. "my AirPods are absolute garbage and keep
+   disconnecting") that the classifier assigns the issue-type intent instead of
+   `complaint`. Hypothesis: complaint is defined by tone, not vocabulary, and bag-of-words
+   features do not capture tone reliably.
+
+3. **`general_information` vs `app_software_issue`** — How-to questions about iOS
+   features ("how do I turn on dark mode?") are semantically close to software-issue
+   reports. The rule-based labels may have mislabeled some of these, making the weak-label
+   boundary especially noisy.
+
+4. **Insufficient-information boundary** — Short or underspecified messages can be
+   difficult to distinguish from actionable intents. Although the finalized golden set
+   now includes `insufficient_information` examples, this class remains challenging
+   because messages often provide too little context for a confident intent decision.
+   Hypothesis: the classifier relies heavily on lexical evidence and lacks conversational
+   context to make a reliable low-information judgement.
+
+5. **Low-frequency intent collapse** — `order_purchase`, `subscription`, and
+   `refund_return` each have fewer than 5 golden examples, so any single
+   misclassification produces a large F1 drop. These are also the intents most likely to
+   need escalation, so under-detection has a direct safety cost.
+
+## Project decision log
+
+1. Selected AppleSupport because it balances volume, conversation diversity, and actionable historical responses.
+2. Reconstructed conversations before creating examples to avoid row-level leakage.
+3. Split training and golden data by conversation and tweet IDs, never randomly by row.
+4. Kept weak labels separate from human-finalized golden labels.
+5. Chose TF-IDF + Logistic Regression as the current baseline before adding model complexity.
+6. Treat `insufficient_information` as a real evaluation class, not an automatic discard bucket.
+7. Treat historical response text as evidence, not proof that an issue was resolved.
+8. Use escalation as a safety decision with false-auto rate as the critical metric.
+9. Do not claim retrieval quality until golden evidence IDs are annotated.
+10. Do not claim LLM-judge reliability until human agreement is measured.
+11. `rule_confidence` is deliberately named to distinguish it from a calibrated probability; it is a heuristic score.
+12. Macro-F1, not accuracy, is the headline metric because class distribution is highly skewed.
+13. `app_software_issue` takes priority over `device_issue` when both keyword sets match — this was validated manually on ambiguous examples.
+14. Ollama was used only to accelerate annotation by proposing labels and resolution interpretations. Every final golden-set label must be human-reviewed before evaluation results are treated as credible.
+15. Temporal split (older conversations → train, newer → golden) was chosen over random split to avoid the evaluation being inflated by temporal correlation in tweet language.
+
+## Current limitations and next week
+
+- Current bulk labels are weak supervision and require review before being treated as truth.
+- Continue human review of the 208-row golden set before treating golden-set F1 as a credible number.
+- Populate `evidence_conversation_id` for each golden example, then run Recall@1/3/5.
+- Human-score a fixed 50-response subset and compute LLM↔human agreement.
+- Tune escalation thresholds on the finalized golden set and report auto-handle rate and false-auto rate.
+- Review the top confusion pairs, especially `app_software_issue`/`device_issue` and `complaint`.
+
+---
+
+## Taxonomy
+
+11 intents (removed `technical_support` garbage bucket, renamed `other` → `insufficient_information`):
+
+| Intent | Definition |
+|---|---|
+| account_access | Apple ID, iCloud, password, login |
+| billing_payment | Charges, invoices, payment errors |
+| app_software_issue | Software/app failures, updates, crashes, and performance issues; device names alone do not determine this intent |
+| device_issue | Physical hardware, battery, screen damage only |
+| subscription | Subscription access, renewal, cancellation |
+| refund_return | Refunds, returns, money back |
+| order_purchase | Orders, shipping, delivery |
+| connectivity_issue | Wi-Fi, Bluetooth, cellular, network |
+| general_information | How-to questions, product info |
+| complaint | Explicit complaints, strongly negative feedback |
+| insufficient_information | Bare mentions, URL-only, very short messages |
+
+`app_software_issue` takes priority over `device_issue` when both match
+(device name + software term → software intent wins).
+
+---
+
+## Model artifacts
+
+Generated model artifacts in `models/` were produced by Step 6 above.
+The primary classifier is TF-IDF + Logistic Regression. A majority-class baseline and
+embedding-based Logistic Regression are also included for comparison.
+
+To regenerate from scratch, delete the `.joblib` files and rerun Step 6.

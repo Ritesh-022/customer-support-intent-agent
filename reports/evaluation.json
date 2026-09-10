@@ -1,0 +1,2516 @@
+{
+  "temporal_split": {
+    "cutoff": "2017-11-17 14:41:00+00:00",
+    "train": 9609,
+    "test": 2402,
+    "classifiers": {
+      "majority": {
+        "label": "temporal_test",
+        "n": 2402,
+        "accuracy": 0.4026,
+        "macro_f1": 0.0522,
+        "weighted_f1": 0.2311,
+        "precision_macro": 0.0366,
+        "recall_macro": 0.0909,
+        "classification_report": {
+          "account_access": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 77.0
+          },
+          "app_software_issue": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 782.0
+          },
+          "billing_payment": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 102.0
+          },
+          "complaint": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 24.0
+          },
+          "connectivity_issue": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 109.0
+          },
+          "device_issue": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 133.0
+          },
+          "general_information": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 82.0
+          },
+          "insufficient_information": {
+            "precision": 0.4025811823480433,
+            "recall": 1.0,
+            "f1-score": 0.5740575838527753,
+            "support": 967.0
+          },
+          "order_purchase": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 81.0
+          },
+          "refund_return": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 10.0
+          },
+          "subscription": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 35.0
+          },
+          "accuracy": 0.4025811823480433,
+          "macro avg": {
+            "precision": 0.03659828930436757,
+            "recall": 0.09090909090909091,
+            "f1-score": 0.052187053077525025,
+            "support": 2402.0
+          },
+          "weighted avg": {
+            "precision": 0.1620716083807485,
+            "recall": 0.4025811823480433,
+            "f1-score": 0.23110478084331126,
+            "support": 2402.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            77,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            782,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            102,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            24,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            109,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            133,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            82,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            967,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            81,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            10,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            35,
+            0,
+            0,
+            0
+          ]
+        ],
+        "labels": [
+          "account_access",
+          "app_software_issue",
+          "billing_payment",
+          "complaint",
+          "connectivity_issue",
+          "device_issue",
+          "general_information",
+          "insufficient_information",
+          "order_purchase",
+          "refund_return",
+          "subscription"
+        ]
+      },
+      "tfidf_logistic": {
+        "label": "temporal_test",
+        "n": 2402,
+        "accuracy": 0.8189,
+        "macro_f1": 0.7241,
+        "weighted_f1": 0.8216,
+        "precision_macro": 0.7413,
+        "recall_macro": 0.7496,
+        "classification_report": {
+          "account_access": {
+            "precision": 0.7065217391304348,
+            "recall": 0.8441558441558441,
+            "f1-score": 0.7692307692307693,
+            "support": 77.0
+          },
+          "app_software_issue": {
+            "precision": 0.9078947368421053,
+            "recall": 0.7941176470588235,
+            "f1-score": 0.8472032742155525,
+            "support": 782.0
+          },
+          "billing_payment": {
+            "precision": 0.7281553398058253,
+            "recall": 0.7352941176470589,
+            "f1-score": 0.7317073170731707,
+            "support": 102.0
+          },
+          "complaint": {
+            "precision": 0.75,
+            "recall": 0.5,
+            "f1-score": 0.6,
+            "support": 24.0
+          },
+          "connectivity_issue": {
+            "precision": 0.7457627118644068,
+            "recall": 0.8073394495412844,
+            "f1-score": 0.775330396475771,
+            "support": 109.0
+          },
+          "device_issue": {
+            "precision": 0.6631016042780749,
+            "recall": 0.9323308270676691,
+            "f1-score": 0.775,
+            "support": 133.0
+          },
+          "general_information": {
+            "precision": 0.5858585858585859,
+            "recall": 0.7073170731707317,
+            "f1-score": 0.6408839779005525,
+            "support": 82.0
+          },
+          "insufficient_information": {
+            "precision": 0.8780748663101604,
+            "recall": 0.8490175801447777,
+            "f1-score": 0.8633017875920084,
+            "support": 967.0
+          },
+          "order_purchase": {
+            "precision": 0.6173913043478261,
+            "recall": 0.8765432098765432,
+            "f1-score": 0.7244897959183674,
+            "support": 81.0
+          },
+          "refund_return": {
+            "precision": 1.0,
+            "recall": 0.4,
+            "f1-score": 0.5714285714285714,
+            "support": 10.0
+          },
+          "subscription": {
+            "precision": 0.5714285714285714,
+            "recall": 0.8,
+            "f1-score": 0.6666666666666666,
+            "support": 35.0
+          },
+          "accuracy": 0.8189009159034139,
+          "macro avg": {
+            "precision": 0.7412899508969083,
+            "recall": 0.7496468862420667,
+            "f1-score": 0.7241129596819482,
+            "support": 2402.0
+          },
+          "weighted avg": {
+            "precision": 0.8340032669277566,
+            "recall": 0.8189009159034139,
+            "f1-score": 0.821590548097826,
+            "support": 2402.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            65,
+            3,
+            0,
+            0,
+            1,
+            2,
+            0,
+            2,
+            3,
+            0,
+            1
+          ],
+          [
+            6,
+            621,
+            8,
+            1,
+            11,
+            37,
+            17,
+            70,
+            5,
+            0,
+            6
+          ],
+          [
+            0,
+            6,
+            75,
+            0,
+            2,
+            3,
+            2,
+            6,
+            6,
+            0,
+            2
+          ],
+          [
+            0,
+            3,
+            0,
+            12,
+            0,
+            1,
+            3,
+            3,
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            8,
+            0,
+            0,
+            88,
+            5,
+            1,
+            4,
+            2,
+            0,
+            1
+          ],
+          [
+            0,
+            1,
+            0,
+            2,
+            0,
+            124,
+            0,
+            6,
+            0,
+            0,
+            0
+          ],
+          [
+            2,
+            1,
+            1,
+            0,
+            0,
+            2,
+            58,
+            13,
+            5,
+            0,
+            0
+          ],
+          [
+            17,
+            38,
+            18,
+            1,
+            16,
+            8,
+            18,
+            821,
+            22,
+            0,
+            8
+          ],
+          [
+            1,
+            3,
+            0,
+            0,
+            0,
+            3,
+            0,
+            2,
+            71,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            2,
+            0,
+            4,
+            1
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            6,
+            0,
+            0,
+            28
+          ]
+        ],
+        "labels": [
+          "account_access",
+          "app_software_issue",
+          "billing_payment",
+          "complaint",
+          "connectivity_issue",
+          "device_issue",
+          "general_information",
+          "insufficient_information",
+          "order_purchase",
+          "refund_return",
+          "subscription"
+        ]
+      }
+    }
+  },
+  "split": {
+    "train": 9602,
+    "test": 2409,
+    "method": "conversation_group_split",
+    "conversation_groups": {
+      "train_conversations": 7200,
+      "test_conversations": 1800
+    }
+  },
+  "classifiers": {
+    "majority": {
+      "label": "weak_label_test",
+      "n": 2409,
+      "accuracy": 0.4355,
+      "macro_f1": 0.0552,
+      "weighted_f1": 0.2642,
+      "precision_macro": 0.0396,
+      "recall_macro": 0.0909,
+      "classification_report": {
+        "account_access": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 43.0
+        },
+        "app_software_issue": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 793.0
+        },
+        "billing_payment": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 85.0
+        },
+        "complaint": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 13.0
+        },
+        "connectivity_issue": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 89.0
+        },
+        "device_issue": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 126.0
+        },
+        "general_information": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 99.0
+        },
+        "insufficient_information": {
+          "precision": 0.43545039435450394,
+          "recall": 1.0,
+          "f1-score": 0.606709080393291,
+          "support": 1049.0
+        },
+        "order_purchase": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 64.0
+        },
+        "refund_return": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 10.0
+        },
+        "subscription": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 38.0
+        },
+        "accuracy": 0.43545039435450394,
+        "macro avg": {
+          "precision": 0.03958639948677309,
+          "recall": 0.09090909090909091,
+          "f1-score": 0.055155370944844635,
+          "support": 2409.0
+        },
+        "weighted avg": {
+          "precision": 0.18961704594349302,
+          "recall": 0.43545039435450394,
+          "f1-score": 0.264191708315717,
+          "support": 2409.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          43,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          793,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          85,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          13,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          89,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          126,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          99,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1049,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          64,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          10,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          38,
+          0,
+          0,
+          0
+        ]
+      ],
+      "labels": [
+        "account_access",
+        "app_software_issue",
+        "billing_payment",
+        "complaint",
+        "connectivity_issue",
+        "device_issue",
+        "general_information",
+        "insufficient_information",
+        "order_purchase",
+        "refund_return",
+        "subscription"
+      ],
+      "disclaimer": "SECONDARY result only. Test labels were generated by the same keyword rules used for training labels. This measures rule reproduction, not real intent accuracy. Do not report this as the headline accuracy."
+    },
+    "tfidf_logistic": {
+      "label": "weak_label_test",
+      "n": 2409,
+      "accuracy": 0.8418,
+      "macro_f1": 0.7538,
+      "weighted_f1": 0.8447,
+      "precision_macro": 0.7436,
+      "recall_macro": 0.7929,
+      "classification_report": {
+        "account_access": {
+          "precision": 0.6415094339622641,
+          "recall": 0.7906976744186046,
+          "f1-score": 0.7083333333333334,
+          "support": 43.0
+        },
+        "app_software_issue": {
+          "precision": 0.9044222539229672,
+          "recall": 0.7994955863808323,
+          "f1-score": 0.8487282463186078,
+          "support": 793.0
+        },
+        "billing_payment": {
+          "precision": 0.7523809523809524,
+          "recall": 0.9294117647058824,
+          "f1-score": 0.8315789473684211,
+          "support": 85.0
+        },
+        "complaint": {
+          "precision": 0.5,
+          "recall": 0.6153846153846154,
+          "f1-score": 0.5517241379310345,
+          "support": 13.0
+        },
+        "connectivity_issue": {
+          "precision": 0.8555555555555555,
+          "recall": 0.8651685393258427,
+          "f1-score": 0.8603351955307262,
+          "support": 89.0
+        },
+        "device_issue": {
+          "precision": 0.6900584795321637,
+          "recall": 0.9365079365079365,
+          "f1-score": 0.7946127946127947,
+          "support": 126.0
+        },
+        "general_information": {
+          "precision": 0.6323529411764706,
+          "recall": 0.8686868686868687,
+          "f1-score": 0.7319148936170212,
+          "support": 99.0
+        },
+        "insufficient_information": {
+          "precision": 0.9017857142857143,
+          "recall": 0.8665395614871306,
+          "f1-score": 0.8838113757899854,
+          "support": 1049.0
+        },
+        "order_purchase": {
+          "precision": 0.5802469135802469,
+          "recall": 0.734375,
+          "f1-score": 0.6482758620689655,
+          "support": 64.0
+        },
+        "refund_return": {
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1-score": 0.6666666666666666,
+          "support": 10.0
+        },
+        "subscription": {
+          "precision": 0.7209302325581395,
+          "recall": 0.8157894736842105,
+          "f1-score": 0.7654320987654321,
+          "support": 38.0
+        },
+        "accuracy": 0.8418430884184309,
+        "macro avg": {
+          "precision": 0.7435674979049522,
+          "recall": 0.7929142745983566,
+          "f1-score": 0.7537648683639081,
+          "support": 2409.0
+        },
+        "weighted avg": {
+          "precision": 0.8557257175623488,
+          "recall": 0.8418430884184309,
+          "f1-score": 0.844694043491408,
+          "support": 2409.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          34,
+          2,
+          0,
+          0,
+          2,
+          2,
+          0,
+          2,
+          1,
+          0,
+          0
+        ],
+        [
+          3,
+          634,
+          5,
+          1,
+          3,
+          38,
+          27,
+          69,
+          10,
+          0,
+          3
+        ],
+        [
+          0,
+          2,
+          79,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          8,
+          0,
+          0,
+          0,
+          5,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          5,
+          0,
+          0,
+          77,
+          3,
+          0,
+          2,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          0,
+          118,
+          0,
+          5,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          1,
+          1,
+          0,
+          0,
+          86,
+          7,
+          2,
+          0,
+          1
+        ],
+        [
+          13,
+          44,
+          17,
+          5,
+          8,
+          9,
+          23,
+          909,
+          16,
+          0,
+          5
+        ],
+        [
+          0,
+          12,
+          1,
+          0,
+          0,
+          1,
+          0,
+          3,
+          47,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3,
+          2,
+          5,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          2,
+          2,
+          0,
+          31
+        ]
+      ],
+      "labels": [
+        "account_access",
+        "app_software_issue",
+        "billing_payment",
+        "complaint",
+        "connectivity_issue",
+        "device_issue",
+        "general_information",
+        "insufficient_information",
+        "order_purchase",
+        "refund_return",
+        "subscription"
+      ],
+      "disclaimer": "SECONDARY result only. Test labels were generated by the same keyword rules used for training labels. This measures rule reproduction, not real intent accuracy. Do not report this as the headline accuracy."
+    },
+    "embedding_logistic": {
+      "label": "weak_label_test",
+      "n": 2409,
+      "accuracy": 0.6559,
+      "macro_f1": 0.5265,
+      "weighted_f1": 0.6853,
+      "precision_macro": 0.4672,
+      "recall_macro": 0.7135,
+      "classification_report": {
+        "account_access": {
+          "precision": 0.46835443037974683,
+          "recall": 0.8604651162790697,
+          "f1-score": 0.6065573770491803,
+          "support": 43.0
+        },
+        "app_software_issue": {
+          "precision": 0.8444084278768234,
+          "recall": 0.6569987389659521,
+          "f1-score": 0.7390070921985815,
+          "support": 793.0
+        },
+        "billing_payment": {
+          "precision": 0.7358490566037735,
+          "recall": 0.9176470588235294,
+          "f1-score": 0.8167539267015707,
+          "support": 85.0
+        },
+        "complaint": {
+          "precision": 0.09782608695652174,
+          "recall": 0.6923076923076923,
+          "f1-score": 0.17142857142857143,
+          "support": 13.0
+        },
+        "connectivity_issue": {
+          "precision": 0.6178861788617886,
+          "recall": 0.8539325842696629,
+          "f1-score": 0.7169811320754716,
+          "support": 89.0
+        },
+        "device_issue": {
+          "precision": 0.45495495495495497,
+          "recall": 0.8015873015873016,
+          "f1-score": 0.5804597701149425,
+          "support": 126.0
+        },
+        "general_information": {
+          "precision": 0.3147208121827411,
+          "recall": 0.6262626262626263,
+          "f1-score": 0.4189189189189189,
+          "support": 99.0
+        },
+        "insufficient_information": {
+          "precision": 0.886039886039886,
+          "recall": 0.5929456625357483,
+          "f1-score": 0.710451170759566,
+          "support": 1049.0
+        },
+        "order_purchase": {
+          "precision": 0.26811594202898553,
+          "recall": 0.578125,
+          "f1-score": 0.36633663366336633,
+          "support": 64.0
+        },
+        "refund_return": {
+          "precision": 0.12121212121212122,
+          "recall": 0.4,
+          "f1-score": 0.18604651162790697,
+          "support": 10.0
+        },
+        "subscription": {
+          "precision": 0.33,
+          "recall": 0.868421052631579,
+          "f1-score": 0.4782608695652174,
+          "support": 38.0
+        },
+        "accuracy": 0.6558738065587381,
+        "macro avg": {
+          "precision": 0.46721526337248576,
+          "recall": 0.7135175303330147,
+          "f1-score": 0.5264729067366631,
+          "support": 2409.0
+        },
+        "weighted avg": {
+          "precision": 0.7710315356419001,
+          "recall": 0.6558738065587381,
+          "f1-score": 0.6853186683802263,
+          "support": 2409.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          37,
+          3,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          11,
+          521,
+          10,
+          24,
+          17,
+          54,
+          40,
+          54,
+          19,
+          10,
+          33
+        ],
+        [
+          1,
+          1,
+          78,
+          0,
+          0,
+          2,
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          9,
+          1,
+          0,
+          0,
+          2,
+          0,
+          0,
+          1
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          76,
+          3,
+          0,
+          3,
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          4,
+          2,
+          2,
+          1,
+          101,
+          2,
+          4,
+          6,
+          4,
+          0
+        ],
+        [
+          3,
+          3,
+          2,
+          1,
+          1,
+          3,
+          62,
+          15,
+          5,
+          2,
+          2
+        ],
+        [
+          23,
+          76,
+          10,
+          50,
+          24,
+          52,
+          89,
+          622,
+          66,
+          11,
+          26
+        ],
+        [
+          1,
+          7,
+          2,
+          5,
+          2,
+          6,
+          1,
+          1,
+          37,
+          0,
+          2
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          4,
+          4,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          33
+        ]
+      ],
+      "labels": [
+        "account_access",
+        "app_software_issue",
+        "billing_payment",
+        "complaint",
+        "connectivity_issue",
+        "device_issue",
+        "general_information",
+        "insufficient_information",
+        "order_purchase",
+        "refund_return",
+        "subscription"
+      ],
+      "disclaimer": "SECONDARY result only. Test labels were generated by the same keyword rules used for training labels. This measures rule reproduction, not real intent accuracy. Do not report this as the headline accuracy."
+    }
+  },
+  "golden_set_evaluation": {
+    "majority": {
+      "label": "golden_set",
+      "n": 208,
+      "accuracy": 0.0385,
+      "macro_f1": 0.0067,
+      "weighted_f1": 0.0028,
+      "precision_macro": 0.0035,
+      "recall_macro": 0.0909,
+      "classification_report": {
+        "account_access": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 9.0
+        },
+        "app_software_issue": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 120.0
+        },
+        "billing_payment": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 2.0
+        },
+        "complaint": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 9.0
+        },
+        "connectivity_issue": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 10.0
+        },
+        "device_issue": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 22.0
+        },
+        "general_information": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 19.0
+        },
+        "insufficient_information": {
+          "precision": 0.038461538461538464,
+          "recall": 1.0,
+          "f1-score": 0.07407407407407407,
+          "support": 8.0
+        },
+        "order_purchase": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 2.0
+        },
+        "refund_return": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 3.0
+        },
+        "subscription": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 4.0
+        },
+        "accuracy": 0.038461538461538464,
+        "macro avg": {
+          "precision": 0.0034965034965034965,
+          "recall": 0.09090909090909091,
+          "f1-score": 0.006734006734006734,
+          "support": 208.0
+        },
+        "weighted avg": {
+          "precision": 0.0014792899408284025,
+          "recall": 0.038461538461538464,
+          "f1-score": 0.0028490028490028487,
+          "support": 208.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          9,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          120,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          9,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          10,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          22,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          19,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          8,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0
+        ]
+      ],
+      "labels": [
+        "account_access",
+        "app_software_issue",
+        "billing_payment",
+        "complaint",
+        "connectivity_issue",
+        "device_issue",
+        "general_information",
+        "insufficient_information",
+        "order_purchase",
+        "refund_return",
+        "subscription"
+      ],
+      "disclaimer": "This is the PRIMARY evaluation result. Labels are independently hand-annotated and were never used for training."
+    },
+    "tfidf_logistic": {
+      "label": "golden_set",
+      "n": 208,
+      "accuracy": 0.4712,
+      "macro_f1": 0.4121,
+      "weighted_f1": 0.5113,
+      "precision_macro": 0.4631,
+      "recall_macro": 0.5263,
+      "classification_report": {
+        "account_access": {
+          "precision": 0.75,
+          "recall": 0.6666666666666666,
+          "f1-score": 0.7058823529411765,
+          "support": 9.0
+        },
+        "app_software_issue": {
+          "precision": 0.9444444444444444,
+          "recall": 0.425,
+          "f1-score": 0.5862068965517241,
+          "support": 120.0
+        },
+        "billing_payment": {
+          "precision": 0.1,
+          "recall": 0.5,
+          "f1-score": 0.16666666666666666,
+          "support": 2.0
+        },
+        "complaint": {
+          "precision": 0.5,
+          "recall": 0.2222222222222222,
+          "f1-score": 0.3076923076923077,
+          "support": 9.0
+        },
+        "connectivity_issue": {
+          "precision": 0.28,
+          "recall": 0.7,
+          "f1-score": 0.4,
+          "support": 10.0
+        },
+        "device_issue": {
+          "precision": 0.21052631578947367,
+          "recall": 0.36363636363636365,
+          "f1-score": 0.26666666666666666,
+          "support": 22.0
+        },
+        "general_information": {
+          "precision": 0.4230769230769231,
+          "recall": 0.5789473684210527,
+          "f1-score": 0.4888888888888889,
+          "support": 19.0
+        },
+        "insufficient_information": {
+          "precision": 0.2857142857142857,
+          "recall": 1.0,
+          "f1-score": 0.4444444444444444,
+          "support": 8.0
+        },
+        "order_purchase": {
+          "precision": 0.1,
+          "recall": 0.5,
+          "f1-score": 0.16666666666666666,
+          "support": 2.0
+        },
+        "refund_return": {
+          "precision": 1.0,
+          "recall": 0.3333333333333333,
+          "f1-score": 0.5,
+          "support": 3.0
+        },
+        "subscription": {
+          "precision": 0.5,
+          "recall": 0.5,
+          "f1-score": 0.5,
+          "support": 4.0
+        },
+        "accuracy": 0.47115384615384615,
+        "macro avg": {
+          "precision": 0.4630692699113752,
+          "recall": 0.5263459958436034,
+          "f1-score": 0.4121013536835038,
+          "support": 208.0
+        },
+        "weighted avg": {
+          "precision": 0.710284077427296,
+          "recall": 0.47115384615384615,
+          "f1-score": 0.511272967835029,
+          "support": 208.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          6,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          51,
+          3,
+          1,
+          13,
+          26,
+          8,
+          13,
+          3,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          0,
+          0,
+          4,
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          7,
+          2,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          4,
+          0,
+          2,
+          8,
+          2,
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          2,
+          2,
+          11,
+          2,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          8,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          2
+        ]
+      ],
+      "labels": [
+        "account_access",
+        "app_software_issue",
+        "billing_payment",
+        "complaint",
+        "connectivity_issue",
+        "device_issue",
+        "general_information",
+        "insufficient_information",
+        "order_purchase",
+        "refund_return",
+        "subscription"
+      ],
+      "disclaimer": "This is the PRIMARY evaluation result. Labels are independently hand-annotated and were never used for training."
+    },
+    "embedding_logistic": {
+      "label": "golden_set",
+      "n": 208,
+      "accuracy": 0.4375,
+      "macro_f1": 0.4039,
+      "weighted_f1": 0.4632,
+      "precision_macro": 0.3775,
+      "recall_macro": 0.6092,
+      "classification_report": {
+        "account_access": {
+          "precision": 0.6363636363636364,
+          "recall": 0.7777777777777778,
+          "f1-score": 0.7,
+          "support": 9.0
+        },
+        "app_software_issue": {
+          "precision": 0.9545454545454546,
+          "recall": 0.35,
+          "f1-score": 0.5121951219512195,
+          "support": 120.0
+        },
+        "billing_payment": {
+          "precision": 0.1111111111111111,
+          "recall": 0.5,
+          "f1-score": 0.18181818181818182,
+          "support": 2.0
+        },
+        "complaint": {
+          "precision": 0.3333333333333333,
+          "recall": 0.2222222222222222,
+          "f1-score": 0.26666666666666666,
+          "support": 9.0
+        },
+        "connectivity_issue": {
+          "precision": 0.32142857142857145,
+          "recall": 0.9,
+          "f1-score": 0.47368421052631576,
+          "support": 10.0
+        },
+        "device_issue": {
+          "precision": 0.2222222222222222,
+          "recall": 0.36363636363636365,
+          "f1-score": 0.27586206896551724,
+          "support": 22.0
+        },
+        "general_information": {
+          "precision": 0.3333333333333333,
+          "recall": 0.42105263157894735,
+          "f1-score": 0.37209302325581395,
+          "support": 19.0
+        },
+        "insufficient_information": {
+          "precision": 0.4,
+          "recall": 1.0,
+          "f1-score": 0.5714285714285714,
+          "support": 8.0
+        },
+        "order_purchase": {
+          "precision": 0.11764705882352941,
+          "recall": 1.0,
+          "f1-score": 0.21052631578947367,
+          "support": 2.0
+        },
+        "refund_return": {
+          "precision": 0.5,
+          "recall": 0.6666666666666666,
+          "f1-score": 0.5714285714285714,
+          "support": 3.0
+        },
+        "subscription": {
+          "precision": 0.2222222222222222,
+          "recall": 0.5,
+          "f1-score": 0.3076923076923077,
+          "support": 4.0
+        },
+        "accuracy": 0.4375,
+        "macro avg": {
+          "precision": 0.3774733584894012,
+          "recall": 0.6092141510801798,
+          "f1-score": 0.4039450035929671,
+          "support": 208.0
+        },
+        "weighted avg": {
+          "precision": 0.6911328867211222,
+          "recall": 0.4375,
+          "f1-score": 0.46317385677985656,
+          "support": 208.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          7,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          4,
+          42,
+          3,
+          3,
+          14,
+          25,
+          7,
+          7,
+          9,
+          1,
+          5
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          1,
+          0,
+          4,
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          9,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          4,
+          1,
+          2,
+          8,
+          3,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0,
+          2,
+          2,
+          8,
+          4,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          8,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          2
+        ]
+      ],
+      "labels": [
+        "account_access",
+        "app_software_issue",
+        "billing_payment",
+        "complaint",
+        "connectivity_issue",
+        "device_issue",
+        "general_information",
+        "insufficient_information",
+        "order_purchase",
+        "refund_return",
+        "subscription"
+      ],
+      "disclaimer": "This is the PRIMARY evaluation result. Labels are independently hand-annotated and were never used for training."
+    }
+  },
+  "failure_modes": [
+    {
+      "gold_intent": "app_software_issue",
+      "predicted_intent": "insufficient_information",
+      "count": 69,
+      "examples": [
+        "iMessage-Aktivierung schl\u00e4gt mal wieder fehl\u2026 @1652 @AppleSupport",
+        "@AppleSupport iMessage stopped working and won\u2019t activate anymore\u2014is that a problem on your side?",
+        "@AppleSupport Hello, I'm getting this error when trying to access https://t.co/bMM7LKuqf5! https://t.co/6pweOKDWYF"
+      ],
+      "hypothesis": "Messages labeled 'app_software_issue' are predicted as 'insufficient_information'. Inspect examples for shared lexical patterns that overlap with 'insufficient_information' patterns in the weak-supervision rules."
+    },
+    {
+      "gold_intent": "insufficient_information",
+      "predicted_intent": "app_software_issue",
+      "count": 44,
+      "examples": [
+        "@AppleSupport any way at all of reducing the amount of storage Mail takes up on your hard disk? \u201cLoad remote content\u201d is off. I also have a 125GB MacBook Air \ud83d\ude29. The only actual files on my computer are mail files, literally everything else is on DropBox",
+        "Grandma just told me @115858 is having problems. My iPhone 7 can\u2019t make calls, so grandma is on to something.",
+        "@AppleSupport @115858 pls fix the #autobrightness. I hate it. Since I updated to #iOS11"
+      ],
+      "hypothesis": "Very short messages that mention a device name get pulled toward app_software_issue because device names were historically strong signals in the weak-label rules."
+    },
+    {
+      "gold_intent": "app_software_issue",
+      "predicted_intent": "device_issue",
+      "count": 38,
+      "examples": [
+        "@AppleSupport Hi I updated software on Monday to 11.1.2 and since then my battery has been draining very quickly can you help?",
+        "@AppleSupport At the last upgrade, my iphone6 is abnormally slow and the battery is going down very fast!!",
+        "The only thing I\u2019m liking about the iPhone 8 is the battery life because my iMessage doesn\u2019t work. @AppleSupport \ud83d\ude0a\ud83d\ude0a\ud83d\ude0a\ud83d\ude0a"
+      ],
+      "hypothesis": "Device nouns (iPhone, iPad, Mac) appear in both intents. When a message mentions a device name without explicit software terms, the classifier over-weights the device noun and predicts device_issue even when the actual problem is software."
+    },
+    {
+      "gold_intent": "app_software_issue",
+      "predicted_intent": "general_information",
+      "count": 27,
+      "examples": [
+        "@AppleSupport add me to the list of the people having the \u201cquestion box\u201d autocorrect thing. Running the most current iOS on an iPhone8+.",
+        "Yep cheers iTunes, how do I fix this? Preordered the album this week @AppleSupport #WhoBuiltTheMoon https://t.co/yvyfuAsR8s",
+        "@317447 What is going on with @115858? Updated my iPhone this weekend and no more playlists on iTunes"
+      ],
+      "hypothesis": "Messages labeled 'app_software_issue' are predicted as 'general_information'. Inspect examples for shared lexical patterns that overlap with 'general_information' patterns in the weak-supervision rules."
+    },
+    {
+      "gold_intent": "insufficient_information",
+      "predicted_intent": "general_information",
+      "count": 23,
+      "examples": [
+        "@AppleSupport can Siri read text (like my Evernote page) to me? If not, where do I make a formal request?",
+        "With every version of ios11 i have sudden and automatic reboot of My iPhone 6s @AppleSupport how i can solve ? I have to wait for the new version?",
+        "@AppleSupport per blogs my experience is not unique. Is there a resolution or is this how Apple gets people to upgrade?"
+      ],
+      "hypothesis": "Messages labeled 'insufficient_information' are predicted as 'general_information'. Inspect examples for shared lexical patterns that overlap with 'general_information' patterns in the weak-supervision rules."
+    }
+  ],
+  "retrieval": {
+    "status": "skipped",
+    "reason": "No evidence_conversation_id values populated in golden set"
+  },
+  "escalation": {
+    "evaluated": 208,
+    "precision": 0.2486,
+    "recall": 0.8627,
+    "f1": 0.386,
+    "false_auto_count": 7,
+    "false_auto_rate": 0.0337,
+    "note": "false_auto_rate is the critical safety metric: cases that should escalate but were auto-handled."
+  },
+  "llm_judge": {
+    "evaluated": 50,
+    "averages": {
+      "groundedness": 3.9,
+      "helpfulness": 3.86,
+      "safety": 4.92,
+      "overall": 3.8
+    },
+    "per_row": [
+      {
+        "groundedness": 3,
+        "helpfulness": 4,
+        "safety": 5,
+        "overall": 4,
+        "reason": "The response is somewhat grounded but could be more specific to the customer's issue with apps closing, especially Music.",
+        "id": 1
+      },
+      {
+        "groundedness": 4,
+        "helpfulness": 4,
+        "safety": 5,
+        "overall": 4,
+        "reason": "The response is relevant and provides a clear path for further assistance.",
+        "id": 2
+      },
+      {
+        "groundedness": 4,
+        "helpfulness": 4,
+        "safety": 5,
+        "overall": 4,
+        "reason": "The response is relevant and provides useful steps, but could be more grounded by referencing the historical evidence more directly.",
+        "id": 3
+      },
+      {
+        "groundedness": 4,
+        "helpfulness": 3,
+        "safety": 5,
+        "overall": 3,
+        "reason": "The response is somewhat grounded and safe, but lacks direct resolution and helpfulness for the specific issue.",
+        "id": 4
+      },
+      {
+        "groundedness": 4,
+        "helpfulness": 4,
+        "safety": 5,
+        "overall": 4,
+        "reason": "The response is relevant and provides a clear path for the customer to provide more information, but it could be more specific to the customer's initial message.",
+        "id": 5
+      },
+      {
+        "groundedness": 4,
+        "helpfulness": 4,
+        "safety": 5,
+        "overall": 4,
+        "reason": "The response is relevant and provides a clear next step, but it could be more empathetic given the customer's frustration.",
+        "id": 6
+      },
+      {
+        "groundedness": 5,
+        "helpfulness": 5,
+        "safety": 5,
+        "overall": 5,
+        "reason": "The response accurately addresses the customer's concern about safety, provides relevant information, and directs the customer to further assistance.",
+        "id": 7
+      },
+      {
+        "groundedness": 4,
+        "helpfulness": 4,
+        "safety": 5,
+        "overall": 4,
+        "reason": "The response is relevant and provides a constructive path for further assistance.",
+        "id": 8
+      },
+      {
+        "groundedness": 4,
+        "helpfulness": 4,
+        "safety": 5,
+        "overall": 4,
+        "reason": "The response is relevant and provides a clear path for the customer to provide necessary information, but it could be more specific about the expected resolution.",
+        "id": 9
+      },
+      {
+        "groundedness": 4,
+        "helpfulness": 4,
+        "safety": 5,
+        "overall": 4,
+        "reason": "The response is relevant and provides a useful workaround, but could be more empathetic and direct in addressing the customer's frustration.",
+        "id": 10
+      },
+      {
+        "groundedness": 4,
+        "helpfulness": 4,
+        "safety": 5,
+        "overall": 4,
+        "reason": "The response is relevant and provides a clear path for the customer to provide necessary information, though it could be more specific to the issue.",
+        "id": 11
+      },
+      {
+        "groundedness": 4,
+        "helpfulness": 4,
+        "safety": 5,
+        "overall": 4,
+        "reason": "The response is relevant and provides a useful link, but it could be more specific to the customer's message.",
+        "id": 12
+      },
+      {
+        "groundedness": 4,
+        "helpfulness": 3,
+        "safety": 5,
+        "overall": 3,
+        "reason": "The response is somewhat grounded and safe, but could be more helpful by directly addressing the issue and providing more specific troubleshooting steps.",
+        "id": 13
+      },
+      {
+        "groundedness": 3,
+        "helpfulness": 4,
+        "safety": 5,
+        "overall": 4,
+        "reason": "The response is relevant and provides a step to resolve the issue, but the initial message was misleading.",
+        "id": 14
+      },
+      {
+        "groundedness": 4,
+        "helpfulness": 4,
+        "safety": 5,
+        "overall": 4,
+        "reason": "The response is relevant and provides a clear next step, but could be more specific to the customer's issue.",
+        "id": 15
+      },
+      {
+        "groundedness": 4,
+        "helpfulness": 5,
+        "safety": 5,
+        "overall": 4,
+        "reason": "The response is relevant and provides a clear path for further assistance, but could be more grounded in the historical context.",
+        "id": 16
+      },
+      {
+        "groundedness": 4,
+        "helpfulness": 4,
+        "safety": 5,
+        "overall": 4,
+        "reason": "The response is relevant and provides a useful workaround, but it could be more direct in addressing the customer's urgency.",
+        "id": 17
+      },
+      {
+        "groundedness": 4,
+        "helpfulness": 3,
+        "safety": 5,
+        "overall": 3,
+        "reason": "The response acknowledges the issue but could be more specific and empathetic.",
+        "id": 18
+      },
+      {
+        "groundedness": 4,
+        "helpfulness": 4,
+        "safety": 5,
+        "overall": 4,
+        "reason": "The response is relevant and provides a link to previous advice, but it could be more proactive in addressing the severity of the issue.",
+        "id": 19
+      },
+      {
+        "groundedness": 4,
+        "helpfulness": 3,
+        "safety": 5,
+        "overall": 3,
+        "reason": "The response is somewhat helpful but lacks specificity to the customer's issue.",
+        "id": 20
+      },
+      {
+        "groundedness": 3,
+        "helpfulness": 3,
+        "safety": 4,
+        "overall": 3,
+        "reason": "The response acknowledges the customer's frustration but could be more direct in suggesting a solution like restoring from a backup.",
+        "id": 21
+      },
+      {
+        "groundedness": 4,
+        "helpfulness": 3,
+        "safety": 5,
+        "overall": 3,
+        "reason": "The response is somewhat grounded and safe, but could be more helpful by providing a direct solution or next steps.",
+        "id": 22
+      },
+      {
+        "groundedness": 4,
+        "helpfulness": 4,
+        "safety": 5,
+        "overall": 4,
+        "reason": "The response is relevant and provides useful suggestions, but could be more personalized to the specific issue mentioned.",
+        "id": 23
+      },
+      {
+        "groundedness": 4,
+        "helpfulness": 4,
+        "safety": 5,
+        "overall": 4,
+        "reason": "The response is relevant and provides a clear path for further assistance, but it could be more empathetic and directly address the customer's frustration.",
+        "id": 24
+      },
+      {
+        "groundedness": 4,
+        "helpfulness": 4,
+        "safety": 5,
+        "overall": 4,
+        "reason": "The response acknowledges the issue and directs the customer to a secure channel for further assistance.",
+        "id": 25
+      },
+      {
+        "groundedness": 4,
+        "helpfulness": 5,
+        "safety": 5,
+        "overall": 4,
+        "reason": "The response is relevant and provides a clear path for further assistance.",
+        "id": 26
+      },
+      {
+        "groundedness": 4,
+        "helpfulness": 4,
+        "safety": 5,
+        "overall": 4,
+        "reason": "The response is relevant and provides a clear path for the customer to resolve the issue, but it could be more specific to the customer's devices.",
+        "id": 27
+      },
+      {
+        "groundedness": 4,
+        "helpfulness": 3,
+        "safety": 5,
+        "overall": 3,
+        "reason": "The response is somewhat grounded and safe, but could be more helpful by providing a direct solution or next steps.",
+        "id": 28
+      },
+      {
+        "groundedness": 4,
+        "helpfulness": 4,
+        "safety": 5,
+        "overall": 4,
+        "reason": "The response is relevant and provides useful troubleshooting steps, but it does not directly address the possibility of downgrading to iOS 10.",
+        "id": 29
+      },
+      {
+        "groundedness": 4,
+        "helpfulness": 4,
+        "safety": 5,
+        "overall": 4,
+        "reason": "The response is relevant and provides useful steps, but could be more grounded by directly addressing the frequent crashes issue.",
+        "id": 30
+      },
+      {
+        "groundedness": 4,
+        "helpfulness": 4,
+        "safety": 5,
+        "overall": 4,
+        "reason": "The response is relevant and provides a safe and helpful course of action, but could be more grounded by directly addressing the specific issue with the mouse.",
+        "id": 31
+      },
+      {
+        "groundedness": 4,
+        "helpfulness": 4,
+        "safety": 5,
+        "overall": 4,
+        "reason": "The response is relevant and provides a clear path for the customer to provide more information, but it could be more empathetic.",
+        "id": 32
+      },
+      {
+        "groundedness": 4,
+        "helpfulness": 5,
+        "safety": 5,
+        "overall": 4,
+        "reason": "The response is relevant, helpful, and safe, but could be more grounded by addressing the specific issue more directly.",
+        "id": 33
+      },
+      {
+        "groundedness": 4,
+        "helpfulness": 3,
+        "safety": 5,
+        "overall": 3,
+        "reason": "The response addresses the battery concern but could be more directly relevant to the emoji issue.",
+        "id": 34
+      },
+      {
+        "groundedness": 4,
+        "helpfulness": 4,
+        "safety": 5,
+        "overall": 4,
+        "reason": "The response is relevant and provides a clear path for the user to provide necessary information, but it could be more specific to iOS 11.",
+        "id": 35
+      },
+      {
+        "groundedness": 4,
+        "helpfulness": 4,
+        "safety": 5,
+        "overall": 4,
+        "reason": "The response is relevant and provides a clear next step for the customer, but it could be more specific to the issue described.",
+        "id": 36
+      },
+      {
+        "groundedness": 5,
+        "helpfulness": 5,
+        "safety": 5,
+        "overall": 5,
+        "reason": "The response is accurate, helpful, and aligns well with historical evidence.",
+        "id": 37
+      },
+      {
+        "groundedness": 4,
+        "helpfulness": 4,
+        "safety": 5,
+        "overall": 4,
+        "reason": "The response is relevant and provides useful steps, but it could be more grounded by addressing the specific issue of the device shutting down unexpectedly.",
+        "id": 38
+      },
+      {
+        "groundedness": 4,
+        "helpfulness": 3,
+        "safety": 5,
+        "overall": 3,
+        "reason": "The response acknowledges the customer's frustration but could be more direct in addressing the issue.",
+        "id": 39
+      },
+      {
+        "groundedness": 4,
+        "helpfulness": 4,
+        "safety": 5,
+        "overall": 4,
+        "reason": "The response is helpful and grounded in the context, but could be more empathetic.",
+        "id": 40
+      },
+      {
+        "groundedness": 4,
+        "helpfulness": 4,
+        "safety": 5,
+        "overall": 4,
+        "reason": "The response is relevant and provides a clear call to action for the customer to provide more details, but it could be more specific to the issues mentioned.",
+        "id": 41
+      },
+      {
+        "groundedness": 4,
+        "helpfulness": 4,
+        "safety": 5,
+        "overall": 4,
+        "reason": "The response is relevant and provides a clear next step for the customer.",
+        "id": 42
+      },
+      {
+        "groundedness": 4,
+        "helpfulness": 4,
+        "safety": 5,
+        "overall": 4,
+        "reason": "The response is relevant, provides useful advice, and ensures safety.",
+        "id": 43
+      },
+      {
+        "groundedness": 2,
+        "helpfulness": 1,
+        "safety": 3,
+        "overall": 2,
+        "reason": "The response is not grounded in addressing the software issue and is overly generic.",
+        "id": 44
+      },
+      {
+        "groundedness": 4,
+        "helpfulness": 4,
+        "safety": 5,
+        "overall": 4,
+        "reason": "The response is relevant and provides a clear path for the customer to get the information they need.",
+        "id": 45
+      },
+      {
+        "groundedness": 2,
+        "helpfulness": 3,
+        "safety": 4,
+        "overall": 3,
+        "reason": "The response is not grounded as it repeats the customer's message without providing any useful information or direction. It is somewhat helpful by suggesting a next step, but not safety-critical.",
+        "id": 46
+      },
+      {
+        "groundedness": 4,
+        "helpfulness": 4,
+        "safety": 5,
+        "overall": 4,
+        "reason": "The response is relevant and provides a practical solution, but it could be more empathetic and acknowledge the customer's frustration.",
+        "id": 47
+      },
+      {
+        "groundedness": 4,
+        "helpfulness": 4,
+        "safety": 5,
+        "overall": 4,
+        "reason": "The response acknowledges the issue and suggests a private conversation for further investigation, which is appropriate.",
+        "id": 48
+      },
+      {
+        "groundedness": 4,
+        "helpfulness": 5,
+        "safety": 5,
+        "overall": 4,
+        "reason": "The response is relevant, helpful, and safe, but could be more grounded in addressing the customer's frustration.",
+        "id": 49
+      },
+      {
+        "groundedness": 4,
+        "helpfulness": 4,
+        "safety": 5,
+        "overall": 4,
+        "reason": "The response is relevant and provides a clear path for further assistance, but could be more directly helpful with immediate tips.",
+        "id": 50
+      }
+    ],
+    "note": "Scores are 1-5 from local Ollama judge. Use human_agreement to validate reliability."
+  },
+  "human_agreement": {},
+  "golden_set_coverage": {
+    "rows": 208,
+    "intent_counts": {
+      "app_software_issue": 120,
+      "device_issue": 22,
+      "general_information": 19,
+      "connectivity_issue": 10,
+      "complaint": 9,
+      "account_access": 9,
+      "insufficient_information": 8,
+      "subscription": 4,
+      "refund_return": 3,
+      "billing_payment": 2,
+      "order_purchase": 2
+    },
+    "insufficient_information_count": 8,
+    "evidence_conversation_id_count": 0,
+    "warnings": [
+      "Retrieval Recall@K is not valid until evidence_conversation_id is populated."
+    ]
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "input_file": "dataset\\twcs\\twcs.csv",
+  "date_range": {
+    "min": "2008-05-08T20:13:59+00:00",
+    "max": "2017-12-03T23:14:01+00:00"
+  },
+  "quality": {
+    "rows_read": 2811774,
+    "invalid_or_empty_tweet_ids": 0,
+    "empty_messages": 0,
+    "messages_over_280_chars": 22618,
+    "brand_tweets": 1273931,
+    "duplicate_rows": 0,
+    "customer_tweets": 1537843,
+    "customer_characters": 169064535,
+    "customer_words": 28800766,
+    "text_urls": 220636,
+    "text_mentions": 1957438,
+    "text_hashtags": 223265,
+    "text_emojis": 277142,
+    "text_questions": 397816,
+    "text_low_information": 3,
+    "text_under_10": 759,
+    "text_10_25": 60014,
+    "text_26_50": 186297,
+    "text_51_100": 443983,
+    "text_over_100": 846790,
+    "unique_tweets": 2811774,
+    "duplicate_tweet_ids": 0,
+    "unique_authors": 702777,
+    "unique_references": 2760421,
+    "broken_references": 226103,
+    "conversation_nodes": 3037877,
+    "conversation_components": 798012
+  },
+  "broken_reference_count": 226103,
+  "single_brand_conversations": 794946,
+  "multi_brand_conversations": 3066,
+  "conversation_turns": {
+    "count": 798012,
+    "median": 2.0,
+    "p25": 2.0,
+    "p75": 4.0,
+    "p90": 6.0,
+    "p95": 8.0,
+    "max": 1390
+  },
+  "response_analysis": {
+    "direction_counts": {
+      "customer_to_brand": 1196963,
+      "brand_to_customer": 1266666,
+      "customer_to_customer": 235066,
+      "brand_to_brand": 3502
+    },
+    "response_time_seconds": {
+      "count": 1261888,
+      "median": 1271.0,
+      "p25": 372.0,
+      "p75": 6438.0,
+      "p90": 31904.0,
+      "p95": 70998.95,
+      "max": 156584810.0
+    },
+    "response_time_minutes": {
+      "count": 1261888,
+      "median": 21.18,
+      "p25": 6.2,
+      "p75": 107.3,
+      "p90": 531.73,
+      "p95": 1183.32,
+      "max": 2609746.83
+    }
+  },
+  "brand_count": 108,
+  "top_5_agent_tweet_share": 0.324193,
+  "top_10_agent_tweet_share": 0.454808
+}

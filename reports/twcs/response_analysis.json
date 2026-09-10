@@ -1,0 +1,26 @@
+{
+  "direction_counts": {
+    "customer_to_brand": 1196963,
+    "brand_to_customer": 1266666,
+    "customer_to_customer": 235066,
+    "brand_to_brand": 3502
+  },
+  "response_time_seconds": {
+    "count": 1261888,
+    "median": 1271.0,
+    "p25": 372.0,
+    "p75": 6438.0,
+    "p90": 31904.0,
+    "p95": 70998.95,
+    "max": 156584810.0
+  },
+  "response_time_minutes": {
+    "count": 1261888,
+    "median": 21.18,
+    "p25": 6.2,
+    "p75": 107.3,
+    "p90": 531.73,
+    "p95": 1183.32,
+    "max": 2609746.83
+  }
+}
