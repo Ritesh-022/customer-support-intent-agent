@@ -276,3 +276,80 @@ The primary classifier is TF-IDF + Logistic Regression. A majority-class baselin
 embedding-based Logistic Regression are also included for comparison.
 
 To regenerate from scratch, delete the `.joblib` files and rerun Step 6.
+
+---
+
+## Web Application
+
+The project includes a full-stack web interface for interacting with the AI support agent.
+
+### Architecture
+
+```
+React + Vite (port 3000)
+       ↓
+   Flask API (port 5000)
+       ↓
+    agent.py
+   ┌────┼────────┐
+   ↓    ↓        ↓
+ ML Model  Retrieval  Ollama
+                ↓
+            SQLite
+```
+
+### Quick Start
+
+**Terminal 1 — Backend:**
+
+```bash
+# From project root
+pip install -r requirements.txt
+cd backend
+python app.py
+```
+
+The API starts at `http://localhost:5000`.
+
+**Terminal 2 — Frontend:**
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+The UI opens at `http://localhost:3000`.
+
+### API Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/conversations` | Start a new conversation |
+| GET | `/api/conversations` | List all conversations |
+| GET | `/api/conversations/<id>` | Get conversation with messages |
+| POST | `/api/conversations/<id>/chat` | Send a customer message, get AI response |
+| PATCH | `/api/conversations/<id>` | Update conversation status |
+| GET | `/api/stats` | Dashboard statistics |
+| GET | `/api/taxonomy` | Intent taxonomy |
+| GET | `/api/health` | Health check |
+
+### What the UI shows
+
+- **Chat interface** — send customer messages, see AI-generated responses
+- **Intent classification** — detected intent with confidence score
+- **Escalation decision** — AUTO-HANDLE vs ESCALATE TO HUMAN with reasoning
+- **Historical evidence** — top matching historical Apple Support conversations
+- **Conversation history** — persistent sidebar with all past conversations
+- **Dashboard stats** — total conversations, active, escalated, auto-handle rate
+
+### Database
+
+For the take-home prototype, SQLite provides lightweight persistent conversation storage.
+Each analyzed conversation stores the customer message, detected intent, confidence score,
+escalation decision, reasoning, historical evidence match, and generated reply — providing
+a full audit trail.
+
+In a production deployment, this layer would be replaced by PostgreSQL, with Redis
+introduced for caching and high-throughput ephemeral state.
+

@@ -46,3 +46,10 @@ dataset/twcs/twcs.csv
 *.egg-info/
 dist/
 build/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+# SQLite database
+*.db
